@@ -1,0 +1,60 @@
+.tarjeta-root {
+  width: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  cursor: default;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.tarjeta-root[role="button"] {
+  cursor: pointer;
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.tarjeta-body {
+  padding: 10px;
+}
+
+.tarjeta-titulo {
+  margin: 0;
+  align-self: right;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.tarjeta-subtitulo {
+  margin: 6px 0 12px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.tarjeta-contenido {
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.tarjeta-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.tarjeta-action-boton {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
