@@ -101,9 +101,9 @@ function Stock() {
     }
   };
 
-const toggleMenu = (id) => {
-  setMenuAbierto(menuAbierto === id ? null : id);
-};
+  const toggleMenu = (id) => {
+    setMenuAbierto(menuAbierto === id ? null : id);
+  };
 
   return (
     <div className={styles.StockComponente}>
@@ -202,7 +202,14 @@ const toggleMenu = (id) => {
                             </div>
 
                             <div className={styles.AccionesMobile}>
-                              <div className={styles.Menu}>
+                              {menuAbierto === p.id_producto && (
+                                <div 
+                                  className={styles.Sobreponer} 
+                                  onClick={() => setMenuAbierto(null)}
+                                  style={{ backgroundColor: 'transparent', zIndex: 99 }}
+                                />
+                              )}
+                              <div className={styles.MenuAccionesContainer}>
                                 <button 
                                   className={styles.MenuToggle}
                                   onClick={() => toggleMenu(p.id_producto)}
@@ -210,21 +217,14 @@ const toggleMenu = (id) => {
                                   ⋮
                                 </button>
                                 {menuAbierto === p.id_producto && (
-                                  <>
-                                    <div 
-                                      className={styles.Sobreponer} 
-                                      onClick={() => setMenuAbierto(null)}
-                                      style={{ backgroundColor: 'transparent' }}
-                                    />
-                                    <div className={styles.Menu}>
-                                      <button className={styles.Boton} onClick={() => editar(p.id_producto)}>
-                                        Editar
-                                      </button>
-                                      <button className={styles.Boton} onClick={() => eliminar(p.id_producto)}>
-                                        Eliminar
-                                      </button>
-                                    </div>
-                                  </>
+                                  <div className={styles.MenuAcciones}>
+                                    <button onClick={() => editar(p.id_producto)}>
+                                      Editar
+                                    </button>
+                                    <button onClick={() => eliminar(p.id_producto)}>
+                                      Eliminar
+                                    </button>
+                                  </div>
                                 )}
                               </div>
                             </div>

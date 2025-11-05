@@ -270,6 +270,7 @@
         width: 90%;
         max-width: 400px;
         padding: 20px;
+        z-index: 1000;
     }
 
     .PopUp h2 {

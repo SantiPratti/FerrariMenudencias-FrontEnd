@@ -6,6 +6,7 @@ function Pedidos(){
     const [pedidos, setPedidos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [estados, setEstados] = useState([]);
+    const [menuAbierto, setMenuAbierto] = useState(null);
 
     useEffect(() => {
         fetchPedidos();
@@ -90,6 +91,8 @@ function Pedidos(){
             console.error('Error al cambiar estado:', err);
             alert('Error de conexión al actualizar el estado');
         }
+        
+        setMenuAbierto(null);
     };
 
     const descargarComprobante = async (idPedido) => {
@@ -115,6 +118,12 @@ function Pedidos(){
             console.error('Error al descargar comprobante:', err);
             alert('Error al generar el comprobante');
         }
+        
+        setMenuAbierto(null);
+    };
+
+    const toggleMenu = (id) => {
+        setMenuAbierto(menuAbierto === id ? null : id);
     };
 
     const getEstadoClass = (estado) => {
@@ -130,11 +139,9 @@ function Pedidos(){
 
     if (loading) {
         return (
-            <div className="Pedidos">
+            <div className={styles.Pedidos}>
                 <h2>Pedidos</h2>
-                <p>
-                    Cargando pedidos...
-                </p>
+                <p>Cargando pedidos...</p>
             </div>
         );
     }
@@ -151,16 +158,13 @@ function Pedidos(){
                             <th>Teléfono</th>
                             <th>Productos</th>
                             <th>Total</th>
-                            <th>Estado</th>
-                            <th>Comprobante</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         {pedidos.length === 0 ? (
                             <tr>
-                                <td colSpan="7" style={{ textAlign: 'center', padding: '20px' }}>
-                                    No hay pedidos registrados
-                                </td>
+                                <td colSpan="7">No hay pedidos registrados</td>
                             </tr>
                         ) : (
                             pedidos.map(p => (
@@ -179,33 +183,74 @@ function Pedidos(){
                                                 {p.telefono}
                                             </a>
                                         ) : (
-                                            <span>
-                                                Sin teléfono
-                                            </span>
+                                            <span>Sin teléfono</span>
                                         )}
                                     </td>
                                     <td>{p.productosStr}</td>
                                     <td>${p.total}</td>
                                     <td>
-                                        <select 
-                                            className="select-estado"
-                                            value={estados.find(e => e.nombre_estado === p.estado)?.id_estado || ''}
-                                            onChange={(e) => cambiarEstado(p.id, e.target.value)}
-                                        >
-                                            {estados.map(e => (
-                                                <option key={e.id_estado} value={e.id_estado}>
-                                                    {e.nombre_estado}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <button 
-                                            className={styles2.Boton}
-                                            onClick={() => descargarComprobante(p.id)}
-                                        >
-                                            Generar Comprobante
-                                        </button>
+                                        <div className={styles2.AccionesDesktop}>
+                                            <select 
+                                                className={styles.SelectEstado}
+                                                value={estados.find(e => e.nombre_estado === p.estado)?.id_estado || ''}
+                                                onChange={(e) => cambiarEstado(p.id, e.target.value)}
+                                            >
+                                                {estados.map(e => (
+                                                    <option key={e.id_estado} value={e.id_estado}>
+                                                        {e.nombre_estado}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <button 
+                                                className={styles2.Boton}
+                                                onClick={() => descargarComprobante(p.id)}
+                                            >
+                                                Comprobante
+                                            </button>
+                                        </div>
+
+                                        <div className={styles2.AccionesMobile}>
+                                            {menuAbierto === p.id && (
+                                                <div 
+                                                    className={styles2.Sobreponer} 
+                                                    onClick={() => setMenuAbierto(null)}
+                                                    style={{ backgroundColor: 'transparent', zIndex: 99 }}
+                                                />
+                                            )}
+                                            <div className={styles2.MenuAccionesContainer}>
+                                                <button 
+                                                    className={styles2.MenuToggle}
+                                                    onClick={() => toggleMenu(p.id)}
+                                                >
+                                                    ⋮
+                                                </button>
+                                                {menuAbierto === p.id && (
+                                                    <div className={styles.MenuAccionesPedidos}>
+                                                        <label style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '5px' }}>
+                                                            Cambiar estado:
+                                                        </label>
+                                                        <select 
+                                                            className={styles.SelectEstadoMobile}
+                                                            value={estados.find(e => e.nombre_estado === p.estado)?.id_estado || ''}
+                                                            onChange={(e) => cambiarEstado(p.id, e.target.value)}
+                                                        >
+                                                            {estados.map(e => (
+                                                                <option key={e.id_estado} value={e.id_estado}>
+                                                                    {e.nombre_estado}
+                                                                </option>
+                                                            ))}
+                                                        </select>
+                                                        <button 
+                                                            className={styles2.Boton} 
+                                                            onClick={() => descargarComprobante(p.id)}
+                                                            style={{ width: '100%' }}
+                                                        >
+                                                            Descargar Comprobante
+                                                        </button>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             ))
