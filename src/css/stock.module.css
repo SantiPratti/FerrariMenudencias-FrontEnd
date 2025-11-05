@@ -1,0 +1,332 @@
+.StockComponente{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    max-height: 450px;
+}
+
+.HeaderTabla{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.Titulo{
+    display: flex;
+    align-items: center;
+    justify-content : center;
+    font-size: 40px;
+}
+
+
+.BotonAgregar{
+    width: 250px;
+    display: block;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #6b7fd7;
+    background-color: #4a4869;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+}
+
+.BotonesPopUp,
+.Boton{
+    margin: 2px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #6b7fd7;
+    background-color: #4a4869;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+}
+
+.TablaContenedor{
+    flex: 1;
+    overflow-y: auto;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.TablaContenedor::-webkit-scrollbar {
+    width: 8px;
+}
+
+.TablaContenedor::-webkit-scrollbar-track {
+    background: beige;
+    border-radius: 4px;
+}
+
+.TablaContenedor::-webkit-scrollbar-thumb {
+    background: #4a4869;
+    border-radius: 4px;
+}
+
+.TablaContenedor::-webkit-scrollbar-thumb:hover {
+    background: #35304f;
+}
+
+.Tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.Tabla thead th {
+    padding: 15px 12px;
+    text-align: center;
+    background-color: #7986cb;
+    font-weight: bold;
+    border: 1px solid #5c6bc0;
+    color: #000;
+    font-size: 16px;
+}
+
+.Tabla tbody td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #9fa8da;
+    background-color: #a8b8f0;
+}
+
+.Tabla tbody tr:hover {
+    background-color: #9fa8da;
+}
+
+.Tabla tbody tr:hover td {
+    background-color: #9fa8da;
+}
+
+.Sobreponer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.PopUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #7986cb;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border: 5px solid;
+    border-color: #000000;
+    z-index: 1000;
+}
+
+.PopUp h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.PopUp label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.MenuAccionesContainer {
+    position: relative;
+}
+
+.MenuToggle {
+    background-color: #4a4869;
+    border: 2px solid #6b7fd7;
+    border-radius: 8px;
+    color: beige;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+}
+
+.MenuAcciones {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    background-color: white;
+    border: 2px solid #6b7fd7;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    min-width: 150px;
+}
+
+.MenuAcciones button {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background-color: transparent;
+    color: #4a4869;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.MenuAcciones button:hover {
+    background-color: #e8eaf6;
+}
+
+.MenuAcciones button:first-child {
+    border-radius: 6px 6px 0 0;
+}
+
+.MenuAcciones button:last-child {
+    border-radius: 0 0 6px 6px;
+    color: #c62828;
+}
+
+.AccionesDesktop {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.AccionesMobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .StockComponente {
+        width: 100%;
+        max-width: 100vw;
+        max-height: calc(100vh - 70px);
+        padding-top: 10px;
+    }
+
+    .HeaderTabla {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 5px;
+    }
+
+    .Titulo {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .BotonAgregar {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .TablaContenedor {
+        margin: 5px;
+        overflow-x: auto;
+    }
+
+    .Tabla {
+        min-width: 100%;
+        font-size: 12px;
+    }
+
+    .Tabla thead th,
+    .Tabla tbody td {
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+
+    /* Ocultar acciones desktop y mostrar mobile */
+    .AccionesDesktop {
+        display: none;
+    }
+
+    .AccionesMobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    .PopUp {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .PopUp h2 {
+        font-size: 20px;
+    }
+
+    .BotonesPopUp {
+        width: 48%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Titulo {
+        font-size: 24px;
+    }
+
+    .Tabla thead th {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    .Tabla tbody td {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    .MenuToggle {
+        padding: 6px 12px;
+        font-size: 16px;
+    }
+
+    .PopUp {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .HeaderTabla {
+        padding: 5px;
+    }
+
+    .TablaContenedor {
+        border-radius: 8px;
+    }
+
+    .Titulo {
+        font-size: 20px;
+    }
+
+    .MenuAcciones {
+        right: -10px;
+    }
+
+    .BotonAgregar {
+        font-size: 14px;
+    }
+}
+

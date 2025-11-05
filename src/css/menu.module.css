@@ -1,0 +1,51 @@
+.Titulo{
+    display: flex;
+    align-items: center;
+    justify-content : center;
+    font-size: 40px;
+    margin: 5px;
+}
+
+.Menu{
+    display: grid;
+    background-color: #D3D3DD;
+    border-radius: 12px;
+    padding: 5px;
+    margin: 5px;
+    justify-content: center;
+}
+
+.BotonMenu{
+    width: 350px;
+    display: block;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #6b7fd7;
+    background-color: #4a4869;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    font-size: 30px;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+}
+
+
+.CerrarSesionBoton{
+    width: 350px;
+    display: block;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #6b7fd7;
+    background-color: #c50000;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    font-size: 30px;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+}

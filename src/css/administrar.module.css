@@ -1,0 +1,48 @@
+.Dashboard{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Stock{
+    background-color: beige;
+    padding: 5px;
+    border-radius: 12px;
+    border: 5px solid #4a4869;
+    margin-top: 50px;
+}
+
+.Pedidos{
+    background-color: beige;
+    padding: 5px;
+    border-radius: 12px;
+    border: 5px solid #4a4869;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .Dashboard{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Dashboard{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .Dashboard{
+        display: flex;
+        flex-direction: column;
+        margin-top: 110px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,135 @@
+.Alertas{
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    border: 5px solid #4a4869;
+    border-radius: 12px;
+    padding: 10px;
+    height: 200px;
+    min-width: 300px;
+    max-width: 550px;
+    min-height: 200px;
+    max-height: 315px;
+    height: 100%;
+}
+
+.Titulo{
+    display: flex;
+    margin: 0 auto;
+}
+
+.Vacio{
+    display: flex;
+    flex: 1;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    transform: translateY(-5px);
+    color: rgb(92, 92, 92);
+}
+
+.Contador{
+    padding-left: 10px;
+    color: red;
+}
+
+.Alerta{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 5px;
+}
+
+.Alerta::-webkit-scrollbar {
+    width: 8px;
+}
+
+.Alerta::-webkit-scrollbar-track {
+    background: beige;
+    border-radius: 4px;
+}
+
+.Alerta::-webkit-scrollbar-thumb {
+    background: #4a4869;
+    border-radius: 4px;
+}
+
+.Alerta::-webkit-scrollbar-thumb:hover {
+    background: #35304f;
+}
+
+.AlertaTarjeta{
+    margin: 5px;
+    padding: 3px;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.AlertaTarjeta{
+    margin: 5px;
+    padding: 3px;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.sinStock {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.bajoStock {
+    background: #fff3cd;
+    color: #856404;
+    border-color: #ad8406;
+}
+
+
+.Cerrar{
+    color: red;
+    cursor: pointer;
+    background: none;
+    border: 0;
+
+}
+
+@media (max-width: 400px) {
+    .Alertas {
+        border-width: 2px;
+        border-radius: 8px;
+        padding: 6px;
+        min-width: 280px;
+    }
+    
+    .Titulo {
+        font-size: 16px;
+    }
+    
+    .Contador {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .Alertas {
+        min-width: 95%;
+        width: min(550px, 95%);
+        min-width: min(300px, 100%);
+        max-height: min(315px, 70vh);
+    }
+    
+    .AlertaTarjeta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .Cerrar {
+        align-self: flex-end;
+    }
+}

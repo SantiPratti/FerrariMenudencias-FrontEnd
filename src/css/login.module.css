@@ -1,0 +1,137 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Login {
+    display: grid;
+    background-color: #D3D3DD;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+}
+
+.Titulo{
+    display: flex;
+    align-items: center;
+    justify-content : center;
+    font-size: 40px;
+}
+
+.Subtitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.Label{
+    padding: 10px;
+    font-size: 20   px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #6b7fd7;
+    border-radius: 50px ;
+    background-color: #4a4869;
+    color: beige;
+    text-shadow: 0 0 10px black;
+    width: 250px;
+    margin: 10px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 0 #000, 1px -1px #000, -1px 1px #000, 1px 1px #000;
+}
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #6b7fd7;
+    border-radius: 8px;
+    background-color: rgb(63, 63, 63);
+    transition: all 0.2s ease;
+    color: beige;
+}
+
+input:focus {
+    outline: none;
+    border-color: beige;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+}
+
+input::placeholder {
+    color: #9ca3af;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+.RegisterBoton,
+.LoginBoton {
+    width: 250px;
+    display: block;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #6b7fd7;
+    background-color: #4a4869;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    font-size: 20px;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+}
+
+.RegisterBoton{
+    background-color: rgb(0, 172, 14);
+}
+
+.RegisterBoton:hover,
+.LoginBoton:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+@media (max-width: 480px) {
+    .Login {
+        margin: 5px;
+        padding: 15px 5px;
+    }
+    
+    .Label {
+        padding: 8px;
+    }
+    
+    input {
+        padding: 8px;
+    }
+    
+    .RegisterBoton,
+    .LoginBoton {
+        padding: 12px 5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .Login {
+        border-radius: 8px;
+    }
+    
+    .Titulo {
+        font-size: 24px;
+    }
+    
+    .Subtitulo {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,13 @@
+.Pedidos h2{
+    display: flex;
+    font-size: 40px;
+}
+
+.Pedidos{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    max-height: 450px;
+}
+
+

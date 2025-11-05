@@ -1,0 +1,170 @@
+.Header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d2d4a;
+    margin: 10px auto;
+    width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+.MenuToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: beige;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.MenuToggle:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.MenuToggle:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.Secciones {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.Boton {
+    width: 250px;
+    display: block;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #6b7fd7;
+    background-color: #4a4869;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    font-size: 20px;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.TarjetaActiva{
+    width: 250px;
+    display: block;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid rgb(0, 172, 14);
+    background-color: #4a4869;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    font-size: 20px;
+    box-shadow: 0 0 0 3px rgba(0, 172, 14, 0.3);
+}
+
+.Boton:hover,
+.TarjetaActiva:hover{
+    color: rgb(0, 172, 14);
+    border-color: rgb(0, 172, 14);
+    box-shadow: 0 4px 12px rgba(0, 172, 14, 0.4);
+}
+
+@media (max-width: 768px) {
+    .Header {
+        margin: 5px auto 5px auto; /* Reducir margen inferior */
+        border-radius: 10px;
+        width: 95%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .MenuToggle {
+        display: block;
+        position: static;
+        transform: none;
+        align-self: flex-end;
+        padding: 8px 12px;
+        margin: 0;
+    }
+    
+    .MenuToggle:hover {
+        transform: scale(1.1);
+    }
+    
+    .MenuToggle:active {
+        transform: scale(0.95);
+    }
+    
+    .Secciones {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        flex-direction: column;
+        padding: 0 12px;
+        gap: 8px;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+    
+    .Secciones.abierto {
+        max-height: 400px;
+        opacity: 1;
+        padding: 8px 12px 12px 12px;
+    }
+    
+    .Boton,
+    .TarjetaActiva {
+        width: 100%;
+        max-width: none;
+        min-width: unset;
+        margin: 0;
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Header {
+        width: 98%;
+        margin: 5px auto 5px auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .Header {
+        border-radius: 8px;
+        margin: 5px auto 5px auto;
+    }
+    
+    .Boton,
+    .TarjetaActiva {
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .MenuToggle {
+        font-size: 24px;
+        padding: 6px 10px;
+    }
+}

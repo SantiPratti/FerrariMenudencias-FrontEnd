@@ -1,0 +1,214 @@
+.PedidosComponente {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.PedidosComponente h1{
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Pedido{
+    margin-top: 5px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    border: 3px solid #4a4869;
+    padding: 15px 20px;
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    z-index: 1; 
+    position: relative;
+}
+
+.Pedido h2{
+    font-size: 28px;
+    color: #2d2d4a;
+    justify-content: center;
+    align-items: center;
+}
+
+.Productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.Productos label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    font-size: 15px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.Productos input[type="checkbox"] {
+    margin: 0; 
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.Titulos {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+.Titulos input[type="date"] {
+    width: 160px;
+    padding: 6px 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.Titulos input[type="date"]:hover {
+    border-color: #4a4869;
+}
+
+.Titulos input[type="date"]:focus {
+    outline: none;
+    border-color: #4a4869;
+}
+
+.Boton{
+    width: 250px;
+    display: block;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #6b7fd7;
+    background-color: #4a4869;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: beige;
+    font-size: 20px;
+    box-shadow: 0 0 0 3px rgba(107, 127, 215, 0.1);
+}
+
+.Sobreponer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.PopUp {
+    background: #f9f9f9;
+    border-radius: 20px;
+    border: 3px solid #2d2d4a;
+    padding: 30px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 500px; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+.PopUp h2 {
+    font-size: 28px;
+    color: #2d2d4a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.PopUp label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.PopUpProductos{
+    flex-direction: grid;
+    margin-bottom: 20px;
+}
+
+.PopUpItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: white;
+    border: 2px solid #2d2d4a;
+    border-radius: 8px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .PedidosComponente {
+        padding-top: 70px;
+    }
+    
+    .Pedido {
+        padding: 12px 15px;
+        border-radius: 15px;
+        width: min(1280px,95%);
+    }
+    
+    .Productos {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .PedidosComponente {
+        padding-top: 60px;
+    }
+    
+    .PedidosComponente h1 {
+        padding: 10px;
+    }
+    
+    .Pedido {
+        padding: 10px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .Productos {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .PopUp {
+        border-radius: 15px;
+        max-height: 85vh;
+    }
+    
+    .PopUpItem {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
